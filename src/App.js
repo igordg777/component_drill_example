@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Parent from "./components/Parent"
+import Mother from './components/Mother';
+import { useState } from 'react';
 
 function App() {
+  const [info, setInfo] = useState('')
+
+  const example2 = (text) => {
+    setInfo(text)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Parent alertAppJs={example2} />
+      <br />
+      <Mother info={info} />
+
     </div>
   );
 }
